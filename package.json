@@ -1,0 +1,14 @@
+{
+  "name": "remarket-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ReMarket Second-Hand Marketplace Monorepo (NestJS Backend + Python LangGraph AI + Flutter FE)",
+  "scripts": {
+    "start": "python main.py",
+    "dev": "python main.py",
+    "dev:windows": "python main.py --windows",
+    "dev:backend-only": "python main.py --no-fe",
+    "seed": "npm --prefix apps/backend run seed",
+    "ingest:kb": "cd apps/ai && python -m app.rag.cli ingest"
+  }
+}

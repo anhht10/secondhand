@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+uploads/
+apps/backend/uploads/
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+/report/
+rebuild_git_history.py
