@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "remarket-ai-service"
+version = "0.2.0"
+description = "LangGraph + Google Gemini AI Foundation, Tools & RAG for ReMarket Second-hand Marketplace"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.137.0",
+    "uvicorn>=0.42.0",
+    "langgraph>=1.2.20",
+    "langgraph-checkpoint>=4.3.1",
+    "langchain-core>=1.7.6",
+    "langchain-google-genai>=4.4.3",
+    "google-genai>=3.0.0",
+    "pydantic>=2.14.3",
+    "pydantic-settings>=2.16.2",
+    "python-dotenv>=1.2.2",
+    "httpx>=0.28.1",
+    "chromadb>=1.5.9",
+    "pypdf>=6.21.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-asyncio>=1.4.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "app"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "integration: marks tests that call the live Google Gemini API (requires GEMINI_API_KEY)",
+]
